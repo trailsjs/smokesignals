@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-trails": "0.0.9",
     "mocha": "^2.3.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "eslint . && mocha"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/trailsjs/smokesignals/issues"
   },
-  "homepage": "https://github.com/trailsjs/smokesignals#readme"
+  "homepage": "https://github.com/trailsjs/smokesignals#readme",
+  "eslintConfig": {
+    "extends": "trails"
+  }
 }
