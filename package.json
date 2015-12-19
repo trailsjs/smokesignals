@@ -1,0 +1,31 @@
+{
+  "name": "@trailsjs/smokesignals",
+  "version": "0.0.0-beta",
+  "description": "Utilities for testing Trails Applications and Trailpacks",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trailsjs/smokesignals.git"
+  },
+  "keywords": [
+    "trails",
+    "trailsjs",
+    "trailpack",
+    "testing",
+    "mocha",
+    "smokesignal"
+  ],
+  "author": "Trails.js Team <hello@trailsjs.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trailsjs/smokesignals/issues"
+  },
+  "homepage": "https://github.com/trailsjs/smokesignals#readme"
+}
