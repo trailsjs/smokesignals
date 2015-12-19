@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- '4'
+- stable
+notifications:
+  email: false
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/54f8a1e753f859f5ca1a
+    on_start: never
+    on_failure: change
+deploy:
+  provider: npm
+  email: hello@trailsjs.io
+  api_key:
+    secure: RXRCL8fZP7Fjwtno/Zqtdo1vGmP6dJD3v/0oNrvtj5pwTr0b+XzWlwuuecEZkCjfrktRdrTIVD/laEungj63d4PJPQ7rh3xdtW897bl9MkQyIkP338mWFgHyOsbN3ugrbQCFyPthM0oVhydMFocFrPbV30jmq9XhpzKtT26O8R5Kd4F/75KIA9z1rG2kQAbwc7RcIokeGT07N0NwTVlioMJuSyTG4bWi8Gpc3oihfT0Ga4TLgYeyjOaBoMNUYF9J32jQUIechpi9EzBfIhk8KwG5vnAPjo0d1S+Wgq06SAOcOH1NrGJV9gNCk07/0yvNqmw7jIR+4iwmS/SwjPmtwVnp4kvCEvzDZ64jN3W3R9hAcZYijyEtF/Up67zlKywxtYrGda6/rWncnW3vxr8Keu9O37CfktIXr/mexaPUnmE9sniD1KkDGAdypiIctyKKRi9D25WNimALy97gB7ZqP4oMs2GWxXWH7WsHMUcMTBmizgfmeSMA5+27R1zhmtD9vgy4UaI8sxNMa38ewRCnOsSgsMPYbzXknysI5kwnXXhJ3//6Gt+oZ6YVQ9OjY8ZB8FIlXh7D5ZJ5DJc5DjcvNIMZkq68G/ThB20BKQ8Q3tFq8imBM+3vScpcAin/uJnenBRQzZR5vRsy3RydpV746lyUnF72yBXkLgYUPrRUvwM=
+  on:
+    tags: true
+    repo: trailsjs/smokesignals
+    node: 'stable'
