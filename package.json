@@ -1,5 +1,5 @@
 {
-  "name": "@trailsjs/smokesignals",
+  "name": "trails-smokesignals",
   "version": "0.0.1",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",

@@ -10,13 +10,13 @@
 
 ## Install
 ```sh
-$ npm install @trailsjs/smokesignals
+$ npm install trails-smokesignals
 ```
 
 ## API
 
 ```js
-const smokesignals = require('@trailsjs/smokesignals')
+const smokesignals = require('trails-smokesignals')
 ```
 
 #### `smokesignals.Logger`
@@ -31,10 +31,10 @@ information on how our projects are organized and how to get started.
 
 
 ## License
-[MIT](https://github.com/trailsjs/@trailsjs/smokesignals/blob/master/LICENSE)
+[MIT](https://github.com/trailsjs/trails-smokesignals/blob/master/LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/@trailsjs/smokesignals.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@trailsjs/smokesignals
+[npm-image]: https://img.shields.io/npm/v/trails-smokesignals.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/trails-smokesignals
 [ci-image]: https://img.shields.io/travis/trailsjs/smokesignals/master.svg?style=flat-square
 [ci-url]: https://travis-ci.org/trailsjs/smokesignals
 [daviddm-image]: http://img.shields.io/david/trailsjs/smokesignals.svg?style=flat-square
