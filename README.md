@@ -29,6 +29,11 @@ and configure `winston`.
 A mock trailpack that will keep the event loop from dying so that integration
 tests can be run on other trailpacks.
 
+#### `smokesignals.FailsafeConfig`
+
+A configuration object that can be merged into a barebones "test" config so that
+it can pass validation by trailpack-core.
+
 ## Contributing
 We love contributions! Please check out our [Contributor's Guide](https://github.com/trailsjs/trails/blob/master/CONTRIBUTING.md) for more
 information on how our projects are organized and how to get started.
