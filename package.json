@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "trailpack": "0.0.14"
+  },
   "devDependencies": {
     "eslint": "^1.10.3",
     "eslint-config-trails": "0.0.9",
