@@ -10,13 +10,13 @@
 
 ## Install
 ```sh
-$ npm install trails-smokesignals
+$ npm install smokesignals
 ```
 
 ## API
 
 ```js
-const smokesignals = require('trails-smokesignals')
+const smokesignals = require('smokesignals')
 ```
 
 #### `smokesignals.Logger`
@@ -24,17 +24,20 @@ const smokesignals = require('trails-smokesignals')
 A mock logger that can be used for testing so that you don't have to `require()`
 and configure `winston`.
 
+#### `smokesignals.Trailpack`
+
+A mock trailpack that will keep the event loop from dying so that integration
+tests can be run on other trailpacks.
 
 ## Contributing
 We love contributions! Please check out our [Contributor's Guide](https://github.com/trailsjs/trails/blob/master/CONTRIBUTING.md) for more
 information on how our projects are organized and how to get started.
 
-
 ## License
-[MIT](https://github.com/trailsjs/trails-smokesignals/blob/master/LICENSE)
+[MIT](https://github.com/trailsjs/smokesignals/blob/master/LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/trails-smokesignals.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/trails-smokesignals
+[npm-image]: https://img.shields.io/npm/v/smokesignals.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/smokesignals
 [ci-image]: https://img.shields.io/travis/trailsjs/smokesignals/master.svg?style=flat-square
 [ci-url]: https://travis-ci.org/trailsjs/smokesignals
 [daviddm-image]: http://img.shields.io/david/trailsjs/smokesignals.svg?style=flat-square
