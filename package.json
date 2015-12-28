@@ -4,11 +4,12 @@
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
   "dependencies": {
-    "trailpack": "0.0.14"
+    "trails": "*",
+    "trailpack": "*"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-trails": "0.0.9",
+    "eslint-config-trails": "*",
     "mocha": "^2.3.4"
   },
   "scripts": {
