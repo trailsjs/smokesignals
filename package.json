@@ -3,13 +3,9 @@
   "version": "0.0.9",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
-  "dependencies": {
-    "trails": "*",
-    "trailpack": "*"
-  },
   "devDependencies": {
-    "eslint": "^1.10.3",
-    "eslint-config-trails": "*",
+    "eslint": "^2.0.0-alpha-2",
+    "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4"
   },
   "scripts": {
@@ -35,5 +31,9 @@
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "eslintConfig": {
     "extends": "trails"
+  },
+  "dependencies": {
+    "trailpack": "0.0.18",
+    "trails": "0.0.23"
   }
 }
