@@ -24,6 +24,12 @@
     "smokesignal"
   ],
   "author": "Trails.js Team <hello@trailsjs.io>",
+  "contributors": [
+    {
+      "name": "Travis Webb",
+      "url": "https://github.com/tjwebb"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/trailsjs/smokesignals/issues"
@@ -33,6 +39,7 @@
     "extends": "trails"
   },
   "dependencies": {
+    "lodash": "^4.0.0",
     "trailpack": "0.0.18",
     "trails": "0.0.23"
   }
