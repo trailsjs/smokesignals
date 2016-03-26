@@ -32,11 +32,11 @@
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
     "lodash": "^4.0.0",
-    "trailpack": "1.0.0-alpha-1",
-    "trails": "0.0.23"
+    "trailpack": "^1.0.0-beta-1",
+    "trails": "^1.0.0-beta-1"
   },
   "devDependencies": {
-    "eslint": "^2.0.0-alpha-2",
+    "eslint": "^2.4.0",
     "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4"
   },
