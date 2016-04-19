@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf trailpack*",
     "test": "eslint . && mocha",
-    "ecosystem-test": "rm -rf trailpack* && node bin/ci.js"
+    "ci": "node bin/ci.js"
   },
   "bin": {
     "ci": "node bin/ci.js"
