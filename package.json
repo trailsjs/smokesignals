@@ -4,7 +4,8 @@
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
   "scripts": {
-    "test": "eslint . && mocha"
+    "clean": "rm -rf trailpack*",
+    "test": "rm -rf trailpack* && eslint . && mocha && node bin/ci.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
     "lodash": "^4.0.0",
+    "request": "^2.72.0",
     "trailpack": "^1.0.0-beta-1",
     "trails": "^1.0.0-beta-1"
   },
