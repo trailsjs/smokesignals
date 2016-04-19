@@ -1,5 +1,7 @@
 ./trailpack-*
+/.idea
 
+=======
 # Logs
 logs
 *.log
