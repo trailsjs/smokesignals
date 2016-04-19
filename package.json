@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf trailpack*",
-    "test": "rm -rf trailpack* && eslint . && mocha && node bin/ci.js"
+    "test": "eslint . && mocha",
+    "ecosystem-test": "rm -rf trailpack* && node bin/ci.js"
+  },
+  "bin": {
+    "ci": "node bin/ci.js"
   },
   "repository": {
     "type": "git",
