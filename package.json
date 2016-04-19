@@ -1,17 +1,8 @@
 {
   "name": "smokesignals",
-  "version": "0.0.9",
+  "version": "1.0.3",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
-  "dependencies": {
-    "trails": "*",
-    "trailpack": "*"
-  },
-  "devDependencies": {
-    "eslint": "^1.10.3",
-    "eslint-config-trails": "*",
-    "mocha": "^2.3.4"
-  },
   "scripts": {
     "test": "eslint . && mocha"
   },
@@ -28,11 +19,27 @@
     "smokesignal"
   ],
   "author": "Trails.js Team <hello@trailsjs.io>",
+  "contributors": [
+    {
+      "name": "Travis Webb",
+      "url": "https://github.com/tjwebb"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/trailsjs/smokesignals/issues"
   },
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "trailpack": "^1.0.0-beta-1",
+    "trails": "^1.0.0-beta-1"
+  },
+  "devDependencies": {
+    "eslint": "^2.4.0",
+    "eslint-config-trails": "^1.0.1",
+    "mocha": "^2.3.4"
+  },
   "eslintConfig": {
     "extends": "trails"
   }
