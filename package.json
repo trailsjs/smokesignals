@@ -6,10 +6,10 @@
   "scripts": {
     "clean": "rm -rf trailpack*",
     "test": "eslint . && mocha",
-    "ci": "node bin/ci.js"
+    "ci": "bin/ci.js"
   },
   "bin": {
-    "ci": "node bin/ci.js"
+    "ci": "bin/ci.js"
   },
   "repository": {
     "type": "git",
