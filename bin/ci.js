@@ -59,7 +59,8 @@ ecosys.getTrailpackList(1, [ ])
       console.log(repo.name, '::', (exitCodes[i] ? 'FAIL' : 'PASS'))
     })
 
-    process.exit(exitCode)
+    console.log('exit code:', exitCode)
+    process.exit(0)
   })
   .catch(err => {
     console.error(err)
