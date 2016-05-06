@@ -42,7 +42,16 @@ ecosys.getTrailpackList(1, [ ])
   .then(exitCodes => {
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
     //console.log('>> npm link exit codes', exitCodes)
-    console.log('>> 5. running tests on', repos.length, 'trailpacks')
+    console.log('>> 5. running nsp (nodesecurity.io) checks')
+
+    exitCode += exitCodes.reduce((sum, code) => sum + code, 0)
+
+    timer = new Date()
+    return ecosys.checkNodeSecurity(repos)
+   })
+  .then(exitCodes => {
+    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+    console.log('>> 6. running tests on', repos.length, 'trailpacks')
 
     exitCode += exitCodes.reduce((sum, code) => sum + code, 0)
 
