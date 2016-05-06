@@ -4,7 +4,7 @@
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf trailpack*",
+    "clean": "rm -rf trailpack* generator*",
     "test": "eslint . && mocha",
     "ci": "bin/ci.js"
   },
