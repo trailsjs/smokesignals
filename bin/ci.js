@@ -9,12 +9,10 @@ const repos = ecosys.getTrailpackList()
 let exitCode = 0
 let timer = new Date()
 
-console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
 console.log('>> 1. cloning', repos.length, 'repositories from github')
 
 const clones = ecosys.cloneTrailpacks(repos)
 console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-//console.log('>> git clone exit codes', exitCodes)
 console.log('>> 3. installing', repos.length, 'trailpack repositories from npm')
 
 exitCode += clones.reduce((sum, proc) => sum + proc, 0)
@@ -22,9 +20,7 @@ exitCode += clones.reduce((sum, proc) => sum + proc, 0)
 timer = new Date()
 const packs = ecosys.npmInstallTrailpacks(repos)
 
-
 console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-//console.log('>> npm link exit codes', exitCodes)
 console.log('>> 4. running nsp (nodesecurity.io) checks')
 
 exitCode += packs.reduce((sum, proc) => sum + proc, 0)
