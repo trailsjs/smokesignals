@@ -36,7 +36,6 @@
   },
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
-    "request": "^2.72.0",
     "trailpack": "^1.0.0-beta-1"
   },
   "devDependencies": {
