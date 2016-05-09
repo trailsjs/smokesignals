@@ -13,33 +13,37 @@ console.log('>> 1. cloning', repos.length, 'repositories from github')
 
 ecosys.cloneTrailpacks(repos)
   .then(clones => {
+    console.log('clone statuses', clones)
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    console.log('>> 3. installing', repos.length, 'trailpack repositories from npm')
+    console.log('>> 2. installing', repos.length, 'trailpack repositories from npm')
 
-    exitCode += clones.reduce((sum, proc) => sum + proc, 0)
+    //exitCode += clones.reduce((sum, proc) => sum + proc, 0)
 
     timer = new Date()
     return ecosys.npmInstallTrailpacks(repos)
   })
   .then(packs => {
+    console.log('install statuses', packs)
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    console.log('>> 4. running nsp (nodesecurity.io) checks')
+    console.log('>> 3. running nsp (nodesecurity.io) checks')
 
-    exitCode += packs.reduce((sum, proc) => sum + proc, 0)
+    //exitCode += packs.reduce((sum, proc) => sum + proc, 0)
 
     timer = new Date()
     return ecosys.checkNodeSecurity(repos)
   })
   .then(security => {
+    console.log('security statuses', security)
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    console.log('>> 5. running tests on', repos.length, 'trailpacks')
+    console.log('>> 4. running tests on', repos.length, 'trailpacks')
 
-    exitCode += security.reduce((sum, proc) => sum + proc, 0)
+    //exitCode += security.reduce((sum, proc) => sum + proc, 0)
 
     timer = new Date()
     return ecosys.npmTestTrailpacks(repos)
   })
   .then(tests => {
+    console.log('test statuses', tests)
     exitCode += tests.reduce((sum, proc) => sum + proc, 0)
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
     console.log()
