@@ -17,7 +17,7 @@ console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
 //console.log('>> git clone exit codes', exitCodes)
 console.log('>> 3. installing', repos.length, 'trailpack repositories from npm')
 
-exitCode += clones.reduce((sum, code) => sum + code, 0)
+exitCode += clones.reduce((sum, proc) => sum + proc.status, 0)
 
 timer = new Date()
 const packs = ecosys.npmInstallTrailpacks(repos)
@@ -27,7 +27,7 @@ console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
 //console.log('>> npm link exit codes', exitCodes)
 console.log('>> 4. running nsp (nodesecurity.io) checks')
 
-exitCode += packs.reduce((sum, code) => sum + code, 0)
+exitCode += packs.reduce((sum, proc) => sum + proc.status, 0)
 
 timer = new Date()
 const security = ecosys.checkNodeSecurity(repos)
@@ -35,12 +35,12 @@ const security = ecosys.checkNodeSecurity(repos)
 console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
 console.log('>> 5. running tests on', repos.length, 'trailpacks')
 
-exitCode += security.reduce((sum, code) => sum + code, 0)
+exitCode += security.reduce((sum, proc) => sum + proc.status, 0)
 
 timer = new Date()
 const tests = ecosys.npmTestTrailpacks(repos)
 
-exitCode += tests.reduce((sum, code) => sum + code, 0)
+exitCode += tests.reduce((sum, proc) => sum + proc.status, 0)
 console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
 console.log()
 console.log('Summary')
