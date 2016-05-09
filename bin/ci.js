@@ -56,3 +56,7 @@ ecosys.cloneTrailpacks(repos)
     console.log('exit code:', exitCode)
     process.exit(exitCode)
   })
+  .catch(err => {
+    console.error(err)
+    process.exit(1)
+  })
