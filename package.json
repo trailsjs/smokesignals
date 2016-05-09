@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf trailpack* generator*",
     "test": "eslint . && mocha",
-    "ci": "bin/ci.js"
+    "ci": "bin/ci.js",
+    "prepublish": "npm run clean"
   },
   "bin": {
     "ci": "bin/ci.js"
@@ -20,6 +21,7 @@
     "trailsjs",
     "trailpack",
     "testing",
+    "ci",
     "mocha",
     "smokesignal"
   ],
