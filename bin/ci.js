@@ -46,7 +46,7 @@ console.log()
 console.log('Summary')
 
 repos.forEach((repo, i) => {
-  console.log(repo.name, '::', (exitCodes[i] ? 'FAIL' : 'PASS'))
+  console.log(repo.name, '::', (tests[i].status ? 'FAIL' : 'PASS'))
 })
 
 console.log('exit code:', exitCode)
