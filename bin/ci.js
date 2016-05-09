@@ -3,22 +3,16 @@
 /*eslint no-console: 0 */
 'use strict'
 
-let repos = [ ]
+const ecosys = require('../').Ecosystem
+const repos = ecosys.getTrailpackList()
+
 let exitCode = 0
 let timer = new Date()
-const ecosys = require('../').Ecosystem
 
-console.log('>> 1. fetching trailpack repository list from Github API...')
+console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+console.log('>> 1. cloning', repos.length, 'repositories from github')
 
-ecosys.getTrailpackList(1, [ ])
-  .then(_repos => {
-    repos = _repos
-    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    console.log('>> 2. cloning', repos.length, 'trailpack repositories from github')
-
-    timer = new Date()
-    return ecosys.cloneTrailpacks(repos)
-  })
+ecosys.cloneTrailpacks(repos)
   .then(exitCodes => {
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
     //console.log('>> git clone exit codes', exitCodes)
@@ -31,18 +25,8 @@ ecosys.getTrailpackList(1, [ ])
   })
   .then(exitCodes => {
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    //console.log('>> npm install exit codes', exitCodes)
-    console.log('>> 4. linking the local trails build into dependencies...')
-
-    exitCode += exitCodes.reduce((sum, code) => sum + code, 0)
-
-    timer = new Date()
-    return Promise.all(ecosys.npmLinkTrails(repos))
-  })
-  .then(exitCodes => {
-    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
     //console.log('>> npm link exit codes', exitCodes)
-    console.log('>> 5. running nsp (nodesecurity.io) checks')
+    console.log('>> 4. running nsp (nodesecurity.io) checks')
 
     exitCode += exitCodes.reduce((sum, code) => sum + code, 0)
 
@@ -51,7 +35,7 @@ ecosys.getTrailpackList(1, [ ])
    })
   .then(exitCodes => {
     console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-    console.log('>> 6. running tests on', repos.length, 'trailpacks')
+    console.log('>> 5. running tests on', repos.length, 'trailpacks')
 
     exitCode += exitCodes.reduce((sum, code) => sum + code, 0)
 
