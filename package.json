@@ -1,6 +1,6 @@
 {
   "name": "smokesignals",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
   "scripts": {
