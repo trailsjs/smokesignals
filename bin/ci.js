@@ -11,39 +11,44 @@ let timer = new Date()
 
 console.log('>> 1. cloning', repos.length, 'repositories from github')
 
-const clones = ecosys.cloneTrailpacks(repos)
-console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-console.log('>> 3. installing', repos.length, 'trailpack repositories from npm')
+ecosys.cloneTrailpacks(repos)
+  .then(clones => {
+    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+    console.log('>> 3. installing', repos.length, 'trailpack repositories from npm')
 
-exitCode += clones.reduce((sum, proc) => sum + proc, 0)
+    exitCode += clones.reduce((sum, proc) => sum + proc, 0)
 
-timer = new Date()
-const packs = ecosys.npmInstallTrailpacks(repos)
+    timer = new Date()
+    return ecosys.npmInstallTrailpacks(repos)
+  })
+  .then(packs => {
+    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+    console.log('>> 4. running nsp (nodesecurity.io) checks')
 
-console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-console.log('>> 4. running nsp (nodesecurity.io) checks')
+    exitCode += packs.reduce((sum, proc) => sum + proc, 0)
 
-exitCode += packs.reduce((sum, proc) => sum + proc, 0)
+    timer = new Date()
+    return ecosys.checkNodeSecurity(repos)
+  })
+  .then(security => {
+    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+    console.log('>> 5. running tests on', repos.length, 'trailpacks')
 
-timer = new Date()
-const security = ecosys.checkNodeSecurity(repos)
+    exitCode += security.reduce((sum, proc) => sum + proc, 0)
 
-console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-console.log('>> 5. running tests on', repos.length, 'trailpacks')
+    timer = new Date()
+    return ecosys.npmTestTrailpacks(repos)
+  })
+  .then(tests => {
+    exitCode += tests.reduce((sum, proc) => sum + proc, 0)
+    console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
+    console.log()
+    console.log('Summary')
 
-exitCode += security.reduce((sum, proc) => sum + proc, 0)
+    repos.forEach((repo, i) => {
+      console.log(repo.name, '::', (tests[i] ? 'FAIL' : 'PASS'))
+    })
 
-timer = new Date()
-const tests = ecosys.npmTestTrailpacks(repos)
-
-exitCode += tests.reduce((sum, proc) => sum + proc, 0)
-console.log('>> complete. time elapsed', (new Date() - timer), 'ms')
-console.log()
-console.log('Summary')
-
-repos.forEach((repo, i) => {
-  console.log(repo.name, '::', (tests[i] ? 'FAIL' : 'PASS'))
-})
-
-console.log('exit code:', exitCode)
-process.exit(exitCode)
+    console.log('exit code:', exitCode)
+    process.exit(exitCode)
+  })
