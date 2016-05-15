@@ -11,12 +11,12 @@ describe('Logger', () => {
   it('should log error when level=error', () => {
     const log = new smokesignals.Logger('error')
     const output = log.error('testerror')
-    assert.equal(output, 'smokesignal logger: [ error ] testerror')
+    assert.equal(output, 'smokesignal error: testerror')
   })
   it('should log verbose when level=silly', () => {
     const log = new smokesignals.Logger('silly')
     const output = log.verbose('testverbose')
-    assert.equal(output, 'smokesignal logger: [ verbose ] testverbose')
+    assert.equal(output, 'smokesignal verbose: testverbose')
   })
   it('should not log warn when level=error', () => {
     const log = new smokesignals.Logger('error')
