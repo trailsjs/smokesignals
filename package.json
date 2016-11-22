@@ -39,7 +39,7 @@
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
     "lodash": "^4.12.0",
-    "trailpack": "^2",
+    "trailpack": "^2.0.0",
     "trails": "^2"
   },
   "devDependencies": {
