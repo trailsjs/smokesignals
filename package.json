@@ -38,9 +38,7 @@
   },
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
-    "lodash": "^4.12.0",
-    "trailpack": "v2-latest",
-    "trails": "v2-latest"
+    "lodash": "^4.12.0"
   },
   "devDependencies": {
     "eslint": "^2.5.0",
