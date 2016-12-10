@@ -1,6 +1,6 @@
 {
   "name": "smokesignals",
-  "version": "2.0.3",
+  "version": "2.0.0-rc3",
   "description": "Utilities for testing Trails Applications and Trailpacks",
   "main": "index.js",
   "scripts": {
@@ -38,9 +38,7 @@
   },
   "homepage": "https://github.com/trailsjs/smokesignals#readme",
   "dependencies": {
-    "lodash": "^4.12.0",
-    "trailpack": "v2-latest",
-    "trails": "v2-latest"
+    "lodash": "^4.17.0"
   },
   "devDependencies": {
     "eslint": "^2.5.0",
@@ -49,5 +47,8 @@
   },
   "eslintConfig": {
     "extends": "trails"
+  },
+  "publishConfig": {
+    "tag": "next"
   }
 }
