@@ -5,8 +5,9 @@
 [![Build status][ci-image]][ci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
+[![Follow @trailsjs on Twitter][twitter-image]][twitter-url]
 
-:fire: Utilities for testing Trails Applications and Trailpacks
+:fire: Utilities for testing [Trails](http://trailsjs.io) Applications and Trailpacks
 
 ## Install
 ```sh
@@ -23,11 +24,6 @@ const smokesignals = require('smokesignals')
 
 A mock logger that can be used for testing so that you don't have to `require()`
 and configure `winston`.
-
-#### `smokesignals.Trailpack`
-
-A mock trailpack that will keep the event loop from dying so that integration
-tests can be run on other trailpacks.
 
 #### `smokesignals.FailsafeConfig`
 
@@ -53,4 +49,5 @@ information on how our projects are organized and how to get started.
 [codeclimate-url]: https://codeclimate.com/github/trailsjs/smokesignals
 [gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
 [gitter-url]: https://gitter.im/trailsjs/trails
-
+[twitter-image]: https://img.shields.io/twitter/follow/trailsjs.svg?style=social
+[twitter-url]: https://twitter.com/trailsjs

@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/trailsjs/smokesignals/issues"
   },
-  "homepage": "https://github.com/trailsjs/smokesignals#readme",
+  "homepage": "https://github.com/trailsjs/smokesignals",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^3",
@@ -45,8 +45,5 @@
   },
   "eslintConfig": {
     "extends": "trails"
-  },
-  "publishConfig": {
-    "tag": "next"
   }
 }
