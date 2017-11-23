@@ -39,7 +39,7 @@
   "homepage": "https://github.com/trailsjs/smokesignals",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^3",
+    "eslint": "^4",
     "eslint-config-trails": "^3",
     "mocha": "^3"
   },
